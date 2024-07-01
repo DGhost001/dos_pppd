@@ -87,17 +87,24 @@ void novm(char *);
 
 /* Prototypes */
 static void network_phase(int);
+#if 0
 static int  login(char *, char *, char **, int *);
+#endif
+
 static void logout(void);
 static int  null_login(int);
+#if 0
 static int  get_upap_passwd(void);
 static int  have_upap_secret(void);
+#endif
 #ifdef ALLOW_CHAP
 static int  have_chap_secret(char *, char *);
 #endif  /* ALLOW_CHAP */
+#if 0
 static int  scan_authfile(FILE *, char *, char *, char *,
                           struct wordlist **, char *);
 static void free_wordlist(struct wordlist *);
+#endif
 
 extern char *crypt(char *, char *);
 
@@ -105,6 +112,7 @@ extern char *crypt(char *, char *);
  * An Open on LCP has requested a change from Dead to Establish phase.
  * Do what's necessary to bring the physical layer up.
  */
+#pragma argsused
 void link_required(int unit)
 {
 }
@@ -113,6 +121,7 @@ void link_required(int unit)
  * LCP has terminated the link; go to the Dead phase and take the
  * physical layer down.
  */
+#pragma argsused
 void link_terminated(int unit)
 {
     if (phase == PHASE_DEAD)
@@ -128,6 +137,7 @@ void link_terminated(int unit)
 /*
  * LCP has gone down; it will either die or try to re-establish.
  */
+#pragma argsused
 void link_down(int unit)
 {
     ipcp_close(0);
@@ -213,6 +223,7 @@ static void network_phase(int unit)
 /*
  * The peer has failed to authenticate himself using `protocol'.
  */
+#pragma argsused
 void auth_peer_fail(int unit, int protocol)
 {
     /*
@@ -362,6 +373,7 @@ void check_auth_options(void)
  *      UPAP_AUTHACK: Authentication succeeded.
  * In either case, msg points to an appropriate message.
  */
+#pragma argsused
 int check_passwd(int unit, char *auser, int userlen,
                  char *apasswd, int passwdlen, char **msg, int *msglen)
 {
@@ -447,6 +459,8 @@ int check_passwd(int unit, char *auser, int userlen,
     }
 
     return ret;
+#else
+  return UPAP_AUTHNAK;
 #endif
 }
 
@@ -459,11 +473,12 @@ int check_passwd(int unit, char *auser, int userlen,
  *      UPAP_AUTHACK: Login succeeded.
  * In either case, msg points to an appropriate message.
  */
-#pragma argsused
+#if 0
 static int login(char *user, char *passwd, char **msg, int *msglen)
 {
     return (UPAP_AUTHNAK);
 }
+#endif
 
 /*
  * logout - Logout the user.
@@ -479,6 +494,7 @@ static void logout(void)
  * acceptable, and if so, set the list of acceptable IP addresses
  * and return 1.
  */
+#pragma argsused
 static int null_login(int unit)
 {
 #if 0
@@ -512,6 +528,8 @@ static int null_login(int unit)
     fclose(f);
 
     return ret;
+#else
+    return 0;
 #endif
 }
 
@@ -521,9 +539,9 @@ static int null_login(int unit)
  * our peer using PAP.  Returns 1 on success, 0 if no suitable password
  * could be found.
  */
+#if 0
 static int get_upap_passwd(void)
 {
-#if 0
     char *filename;
     FILE *f;
     char secret[MAXWORDLEN];
@@ -541,17 +559,16 @@ static int get_upap_passwd(void)
     passwd[MAXSECRETLEN - 1] = 0;
 
     return 1;
-#endif
 }
-
+#endif
 
 /*
  * have_upap_secret - check whether we have a PAP file with any
  * secrets that we could possibly use for authenticating the peer.
  */
+#if 0
 static int have_upap_secret(void)
 {
-#if 0
     FILE *f;
     int ret;
     char *filename;
@@ -569,9 +586,8 @@ static int have_upap_secret(void)
         return 0;
 
     return 1;
-#endif
 }
-
+#endif
 
 #ifdef ALLOW_CHAP
 /*
@@ -766,7 +782,8 @@ int _dgetc(int fhandle)
     }
     else {
         do {
-            if ( (goterror = _dos_read(fhandle, &c, 1, &nread)) )
+            goterror = _dos_read(fhandle, &c, 1, &nread);
+            if ( goterror )
                 return EOF;
 
             if ( ! nread )
@@ -1051,11 +1068,11 @@ int getword(int fhandle, char *word, int *newlinep, const char *filename)
  * Any following words on the line (i.e. address authorization
  * info) are placed in a wordlist and returned in *addrs.
  */
+#if 0
 static int scan_authfile(FILE *f, char *client,
                          char *server, char *secret,
                          struct wordlist **addrs, char *filename)
 {
-#if 0
     int newline, xxx;
     int got_flag, best_flag;
     FILE *sf;
@@ -1189,15 +1206,14 @@ static int scan_authfile(FILE *f, char *client,
         free_wordlist(addr_list);
 
     return best_flag;
-#endif
 }
-
+#endif
 /*
  * free_wordlist - release memory allocated for a wordlist.
  */
+#if 0
 static void free_wordlist(struct wordlist *wp)
 {
-#if 0
     struct wordlist *next;
 
     while (wp != NULL) {
@@ -1205,6 +1221,5 @@ static void free_wordlist(struct wordlist *wp)
         free(wp);
         wp = next;
     }
-#endif
 }
-
+#endif
