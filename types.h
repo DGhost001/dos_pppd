@@ -11,9 +11,17 @@ typedef unsigned short u_short;
 
 #define ntohl(x) htonl(x)
 #define ntohs(x) htons(x)
-#define _fastcall
-unsigned long _fastcall htonl(unsigned long);
-unsigned short _fastcall htons(unsigned short);
+
+static unsigned short htons(unsigned short const a)
+{
+    return (a>> 8) | (a << 8);
+}
+
+static u_int32_t htonl(u_int32_t const a)
+{
+    return ((u_int32_t)(htons(a >> 16))) | ((u_int32_t)htons(a&0xffff) << 16);
+}
+
 int sprintf(char *, const char *, ...);
 int vsprintf(char *, const char *, void *);
 
