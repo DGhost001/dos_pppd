@@ -1,0 +1,921 @@
+Warning: __nfile defined in module DOSMAIN.C is duplicated in library file C:\TC\LIB\CS.LIB in module FILES2
+Warning: __heaplen defined in module DOSMAIN.C is duplicated in library file C:\TC\LIB\CS.LIB in module HEAPLEN
+Warning: __setupio defined in module DOSMAIN.C is duplicated in library file C:\TC\LIB\CS.LIB in module SETUPIO
+Warning: __stklen defined in module DOSMAIN.C is duplicated in library file C:\TC\LIB\CS.LIB in module STKLEN
+Warning: _sleep defined in module DOSMAIN.C is duplicated in library file C:\TC\LIB\CS.LIB in module SLEEP
+
+ Start  Stop   Length Name               Class
+
+ 00000H 0BD21H 0BD22H _TEXT              CODE
+ 0BD30H 0BD30H 00000H _FARDATA           FAR_DATA
+ 0BD30H 0BD30H 00000H _FARBSS            FAR_BSS
+ 0BD30H 0BD30H 00000H _OVERLAY_          OVRINFO
+ 0BD30H 0BD30H 00000H _1STUB_            STUBSEG
+ 0BD30H 0E523H 027F4H _DATA              DATA
+ 0E524H 0E525H 00002H _CVTSEG            DATA
+ 0E526H 0E52BH 00006H _SCNSEG            DATA
+ 0E52CH 0E52CH 00000H _CONST             CONST
+ 0E52CH 0E531H 00006H _INIT_             INITDATA
+ 0E532H 0E532H 00000H _INITEND_          INITDATA
+ 0E532H 0E532H 00000H _EXIT_             EXITDATA
+ 0E532H 0E532H 00000H _EXITEND_          EXITDATA
+ 0E532H 0F831H 01300H _BSS               BSS
+ 0F832H 0F832H 00000H _BSSEND            BSSEND
+ 0F840H 0F8BFH 00080H _STACK             STACK
+
+
+Detailed map of segments
+
+ 0000:0000 0291 C=CODE   S=_TEXT          G=(none)  M=c0.ASM     ACBP=28
+ 0000:0291 06F0 C=CODE   S=_TEXT          G=(none)  M=AUTH.C     ACBP=28
+ 0000:0981 002E C=CODE   S=_TEXT          G=(none)  M=MAGIC.C    ACBP=28
+ 0000:09AF 187E C=CODE   S=_TEXT          G=(none)  M=IPCP.C     ACBP=28
+ 0000:222D 08AF C=CODE   S=_TEXT          G=(none)  M=UPAP.C     ACBP=28
+ 0000:2ADC 20D9 C=CODE   S=_TEXT          G=(none)  M=LCP.C      ACBP=28
+ 0000:4BB5 0CE0 C=CODE   S=_TEXT          G=(none)  M=FSM.C      ACBP=28
+ 0000:5895 1525 C=CODE   S=_TEXT          G=(none)  M=PPP.C      ACBP=28
+ 0000:6DBA 0E76 C=CODE   S=_TEXT          G=(none)  M=N8250.C    ACBP=28
+ 0000:7C30 0046 C=CODE   S=_TEXT          G=(none)  M=CRITICAL.ASM ACBP=28
+ 0000:7C76 030C C=CODE   S=_TEXT          G=(none)  M=LOWLEVEL.ASM ACBP=48
+ 0000:7F82 0009 C=CODE   S=_TEXT          G=(none)  M=BYTEORDE.ASM ACBP=28
+ 0000:7F8B 0A3D C=CODE   S=_TEXT          G=(none)  M=PKTDRVRE.C ACBP=28
+ 0000:89C8 0CA7 C=CODE   S=_TEXT          G=(none)  M=OPTSDOS.C  ACBP=28
+ 0000:966F 1191 C=CODE   S=_TEXT          G=(none)  M=DOSMAIN.C  ACBP=28
+ 0000:A800 0024 C=CODE   S=_TEXT          G=(none)  M=ATEXIT     ACBP=28
+ 0000:A824 0000 C=CODE   S=_TEXT          G=(none)  M=CTYPE      ACBP=28
+ 0000:A824 0016 C=CODE   S=_TEXT          G=(none)  M=DOSCLOSE   ACBP=28
+ 0000:A83A 004B C=CODE   S=_TEXT          G=(none)  M=DOSCREAT   ACBP=28
+ 0000:A885 0016 C=CODE   S=_TEXT          G=(none)  M=DOSFREE    ACBP=28
+ 0000:A89B 0012 C=CODE   S=_TEXT          G=(none)  M=DOSKEEP    ACBP=28
+ 0000:A8AD 0033 C=CODE   S=_TEXT          G=(none)  M=DOSOPEN    ACBP=28
+ 0000:A8E0 0023 C=CODE   S=_TEXT          G=(none)  M=DOSREAD    ACBP=28
+ 0000:A903 0023 C=CODE   S=_TEXT          G=(none)  M=DOSWRITE   ACBP=28
+ 0000:A926 0089 C=CODE   S=_TEXT          G=(none)  M=EXIT       ACBP=28
+ 0000:A9AF 001B C=CODE   S=_TEXT          G=(none)  M=GETCBRK    ACBP=28
+ 0000:A9CA 0020 C=CODE   S=_TEXT          G=(none)  M=GETVECT    ACBP=28
+ 0000:A9EA 00AE C=CODE   S=_TEXT          G=(none)  M=H_LDIV     ACBP=28
+ 0000:AA98 0021 C=CODE   S=_TEXT          G=(none)  M=H_LLSH     ACBP=28
+ 0000:AAB9 0020 C=CODE   S=_TEXT          G=(none)  M=H_LRSH     ACBP=28
+ 0000:AAD9 0021 C=CODE   S=_TEXT          G=(none)  M=H_LURSH    ACBP=28
+ 0000:AAFA 004B C=CODE   S=_TEXT          G=(none)  M=IOERROR    ACBP=28
+ 0000:AB45 009A C=CODE   S=_TEXT          G=(none)  M=LONGTOA    ACBP=28
+ 0000:ABDF 0017 C=CODE   S=_TEXT          G=(none)  M=N_LXMUL    ACBP=28
+ 0000:ABF6 001C C=CODE   S=_TEXT          G=(none)  M=N_SCOPY    ACBP=28
+ 0000:AC12 0037 C=CODE   S=_TEXT          G=(none)  M=RAND       ACBP=28
+ 0000:AC49 01AA C=CODE   S=_TEXT          G=(none)  M=SCANTOL    ACBP=28
+ 0000:ADF3 0015 C=CODE   S=_TEXT          G=(none)  M=SEGREAD    ACBP=28
+ 0000:AE08 002C C=CODE   S=_TEXT          G=(none)  M=TOUPPER    ACBP=28
+ 0000:AE34 04C6 C=CODE   S=_TEXT          G=(none)  M=VPRINTER   ACBP=28
+ 0000:B2FA 006F C=CODE   S=_TEXT          G=(none)  M=BRK        ACBP=28
+ 0000:B369 0010 C=CODE   S=_TEXT          G=(none)  M=CORELEFT   ACBP=28
+ 0000:B379 001F C=CODE   S=_TEXT          G=(none)  M=CVTFAK     ACBP=28
+ 0000:B398 0085 C=CODE   S=_TEXT          G=(none)  M=INTDOS     ACBP=28
+ 0000:B41D 0277 C=CODE   S=_TEXT          G=(none)  M=NEARHEAP   ACBP=28
+ 0000:B694 0004 C=CODE   S=_TEXT          G=(none)  M=REALCVT    ACBP=28
+ 0000:B698 0113 C=CODE   S=_TEXT          G=(none)  M=SETARGV    ACBP=28
+ 0000:B7AB 00C5 C=CODE   S=_TEXT          G=(none)  M=SPAWN      ACBP=28
+ 0000:B870 001F C=CODE   S=_TEXT          G=(none)  M=MEMCHR     ACBP=28
+ 0000:B88F 0029 C=CODE   S=_TEXT          G=(none)  M=MEMCMP     ACBP=28
+ 0000:B8B8 001F C=CODE   S=_TEXT          G=(none)  M=MEMCPY     ACBP=28
+ 0000:B8D7 0040 C=CODE   S=_TEXT          G=(none)  M=MEMSET     ACBP=28
+ 0000:B917 0062 C=CODE   S=_TEXT          G=(none)  M=MOVMEM     ACBP=28
+ 0000:B979 005F C=CODE   S=_TEXT          G=(none)  M=SPRINTF    ACBP=28
+ 0000:B9D8 0039 C=CODE   S=_TEXT          G=(none)  M=STRCAT     ACBP=28
+ 0000:BA11 0036 C=CODE   S=_TEXT          G=(none)  M=STRCHR     ACBP=28
+ 0000:BA47 002F C=CODE   S=_TEXT          G=(none)  M=STRCMP     ACBP=28
+ 0000:BA76 0022 C=CODE   S=_TEXT          G=(none)  M=STRCPY     ACBP=28
+ 0000:BA98 0032 C=CODE   S=_TEXT          G=(none)  M=STRDUP     ACBP=28
+ 0000:BACA 001A C=CODE   S=_TEXT          G=(none)  M=STRLEN     ACBP=28
+ 0000:BAE4 0044 C=CODE   S=_TEXT          G=(none)  M=STRNCAT    ACBP=28
+ 0000:BB28 002C C=CODE   S=_TEXT          G=(none)  M=STRNCPY    ACBP=28
+ 0000:BB54 0043 C=CODE   S=_TEXT          G=(none)  M=STRNICMP   ACBP=28
+ 0000:BB97 002D C=CODE   S=_TEXT          G=(none)  M=STRRCHR    ACBP=28
+ 0000:BBC4 00CF C=CODE   S=_TEXT          G=(none)  M=STRTOUL    ACBP=28
+ 0000:BC93 0028 C=CODE   S=_TEXT          G=(none)  M=FMEMCMP    ACBP=28
+ 0000:BCBB 0024 C=CODE   S=_TEXT          G=(none)  M=FMEMCPY    ACBP=28
+ 0000:BCDF 0043 C=CODE   S=_TEXT          G=(none)  M=FMEMSET    ACBP=28
+ 0BD3:0000 0000 C=FAR_DATA S=_FARDATA       G=(none)  M=c0.ASM     ACBP=68
+ 0BD3:0000 0000 C=FAR_BSS S=_FARBSS        G=(none)  M=c0.ASM     ACBP=68
+ 0BD3:0000 0000 C=OVRINFO S=_OVERLAY_      G=(none)  M=c0.ASM     ACBP=68
+ 0BD3:0000 0000 C=STUBSEG S=_1STUB_        G=(none)  M=c0.ASM     ACBP=68
+ 0BD3:0000 00AA C=DATA   S=_DATA          G=DGROUP  M=c0.ASM     ACBP=68
+ 0BD3:00AA 0106 C=DATA   S=_DATA          G=DGROUP  M=AUTH.C     ACBP=48
+ 0BD3:01B0 0000 C=DATA   S=_DATA          G=DGROUP  M=MAGIC.C    ACBP=48
+ 0BD3:01B0 0350 C=DATA   S=_DATA          G=DGROUP  M=IPCP.C     ACBP=48
+ 0BD3:0500 0268 C=DATA   S=_DATA          G=DGROUP  M=UPAP.C     ACBP=48
+ 0BD3:0768 05E6 C=DATA   S=_DATA          G=DGROUP  M=LCP.C      ACBP=48
+ 0BD3:0D4E 02EF C=DATA   S=_DATA          G=DGROUP  M=FSM.C      ACBP=48
+ 0BD3:103E 0AB8 C=DATA   S=_DATA          G=DGROUP  M=PPP.C      ACBP=48
+ 0BD3:1AF6 013A C=DATA   S=_DATA          G=DGROUP  M=N8250.C    ACBP=48
+ 0BD3:1C30 0000 C=DATA   S=_DATA          G=DGROUP  M=CRITICAL.ASM ACBP=48
+ 0BD3:1C30 0014 C=DATA   S=_DATA          G=DGROUP  M=LOWLEVEL.ASM ACBP=48
+ 0BD3:1C44 0000 C=DATA   S=_DATA          G=DGROUP  M=BYTEORDE.ASM ACBP=48
+ 0BD3:1C44 008A C=DATA   S=_DATA          G=DGROUP  M=PKTDRVRE.C ACBP=48
+ 0BD3:1CCE 0540 C=DATA   S=_DATA          G=DGROUP  M=OPTSDOS.C  ACBP=48
+ 0BD3:220E 03CE C=DATA   S=_DATA          G=DGROUP  M=DOSMAIN.C  ACBP=48
+ 0BD3:25DC 0002 C=DATA   S=_DATA          G=DGROUP  M=ATEXIT     ACBP=48
+ 0BD3:25DE 0101 C=DATA   S=_DATA          G=DGROUP  M=CTYPE      ACBP=48
+ 0BD3:26E0 0000 C=DATA   S=_DATA          G=DGROUP  M=DOSCLOSE   ACBP=48
+ 0BD3:26E0 0000 C=DATA   S=_DATA          G=DGROUP  M=DOSCREAT   ACBP=48
+ 0BD3:26E0 0000 C=DATA   S=_DATA          G=DGROUP  M=DOSFREE    ACBP=48
+ 0BD3:26E0 0000 C=DATA   S=_DATA          G=DGROUP  M=DOSKEEP    ACBP=48
+ 0BD3:26E0 0000 C=DATA   S=_DATA          G=DGROUP  M=DOSOPEN    ACBP=48
+ 0BD3:26E0 0000 C=DATA   S=_DATA          G=DGROUP  M=DOSREAD    ACBP=48
+ 0BD3:26E0 0000 C=DATA   S=_DATA          G=DGROUP  M=DOSWRITE   ACBP=48
+ 0BD3:26E0 0006 C=DATA   S=_DATA          G=DGROUP  M=EXIT       ACBP=48
+ 0BD3:26E6 0000 C=DATA   S=_DATA          G=DGROUP  M=GETCBRK    ACBP=48
+ 0BD3:26E6 0000 C=DATA   S=_DATA          G=DGROUP  M=GETVECT    ACBP=48
+ 0BD3:26E6 0000 C=DATA   S=_DATA          G=DGROUP  M=H_LDIV     ACBP=48
+ 0BD3:26E6 0000 C=DATA   S=_DATA          G=DGROUP  M=H_LLSH     ACBP=48
+ 0BD3:26E6 0000 C=DATA   S=_DATA          G=DGROUP  M=H_LRSH     ACBP=48
+ 0BD3:26E6 0000 C=DATA   S=_DATA          G=DGROUP  M=H_LURSH    ACBP=48
+ 0BD3:26E6 005B C=DATA   S=_DATA          G=DGROUP  M=IOERROR    ACBP=48
+ 0BD3:2742 0000 C=DATA   S=_DATA          G=DGROUP  M=LONGTOA    ACBP=48
+ 0BD3:2742 0000 C=DATA   S=_DATA          G=DGROUP  M=N_LXMUL    ACBP=48
+ 0BD3:2742 0000 C=DATA   S=_DATA          G=DGROUP  M=N_SCOPY    ACBP=48
+ 0BD3:2742 0004 C=DATA   S=_DATA          G=DGROUP  M=RAND       ACBP=48
+ 0BD3:2746 0000 C=DATA   S=_DATA          G=DGROUP  M=SCANTOL    ACBP=48
+ 0BD3:2746 0000 C=DATA   S=_DATA          G=DGROUP  M=SEGREAD    ACBP=48
+ 0BD3:2746 0000 C=DATA   S=_DATA          G=DGROUP  M=TOUPPER    ACBP=48
+ 0BD3:2746 0067 C=DATA   S=_DATA          G=DGROUP  M=VPRINTER   ACBP=48
+ 0BD3:27AE 0000 C=DATA   S=_DATA          G=DGROUP  M=BRK        ACBP=48
+ 0BD3:27AE 0000 C=DATA   S=_DATA          G=DGROUP  M=CORELEFT   ACBP=48
+ 0BD3:27AE 0031 C=DATA   S=_DATA          G=DGROUP  M=CVTFAK     ACBP=48
+ 0BD3:27E0 0000 C=DATA   S=_DATA          G=DGROUP  M=INTDOS     ACBP=48
+ 0BD3:27E0 0006 C=DATA   S=_DATA          G=DGROUP  M=NEARHEAP   ACBP=48
+ 0BD3:27E6 0000 C=DATA   S=_DATA          G=DGROUP  M=REALCVT    ACBP=48
+ 0BD3:27E6 000E C=DATA   S=_DATA          G=DGROUP  M=SETARGV    ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=SPAWN      ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=MEMCHR     ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=MEMCMP     ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=MEMCPY     ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=MEMSET     ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=MOVMEM     ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=SPRINTF    ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=STRCAT     ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=STRCHR     ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=STRCMP     ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=STRCPY     ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=STRDUP     ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=STRLEN     ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=STRNCAT    ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=STRNCPY    ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=STRNICMP   ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=STRRCHR    ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=STRTOUL    ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=FMEMCMP    ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=FMEMCPY    ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_DATA          G=DGROUP  M=FMEMSET    ACBP=48
+ 0BD3:27F4 0000 C=DATA   S=_CVTSEG        G=DGROUP  M=c0.ASM     ACBP=48
+ 0BD3:27F4 0002 C=DATA   S=_CVTSEG        G=DGROUP  M=CVTFAK     ACBP=48
+ 0BD3:27F6 0000 C=DATA   S=_CVTSEG        G=DGROUP  M=REALCVT    ACBP=48
+ 0BD3:27F6 0000 C=DATA   S=_SCNSEG        G=DGROUP  M=c0.ASM     ACBP=48
+ 0BD3:27F6 0006 C=DATA   S=_SCNSEG        G=DGROUP  M=CVTFAK     ACBP=48
+ 0BD3:27FC 0000 C=CONST  S=_CONST         G=DGROUP  M=c0.ASM     ACBP=48
+ 0BD3:27FC 0000 C=INITDATA S=_INIT_         G=DGROUP  M=c0.ASM     ACBP=48
+ 0BD3:27FC 0006 C=INITDATA S=_INIT_         G=DGROUP  M=SETARGV    ACBP=48
+ 0BD3:2802 0000 C=INITDATA S=_INITEND_      G=DGROUP  M=c0.ASM     ACBP=28
+ 0BD3:2802 0000 C=EXITDATA S=_EXIT_         G=DGROUP  M=c0.ASM     ACBP=48
+ 0BD3:2802 0000 C=EXITDATA S=_EXITEND_      G=DGROUP  M=c0.ASM     ACBP=28
+ 0BD3:2802 0000 C=BSS    S=_BSS           G=DGROUP  M=c0.ASM     ACBP=48
+ 0BD3:2802 0006 C=BSS    S=_BSS           G=DGROUP  M=AUTH.C     ACBP=48
+ 0BD3:2808 0000 C=BSS    S=_BSS           G=DGROUP  M=MAGIC.C    ACBP=48
+ 0BD3:2808 00CD C=BSS    S=_BSS           G=DGROUP  M=IPCP.C     ACBP=48
+ 0BD3:28D6 0017 C=BSS    S=_BSS           G=DGROUP  M=UPAP.C     ACBP=48
+ 0BD3:28EE 0085 C=BSS    S=_BSS           G=DGROUP  M=LCP.C      ACBP=48
+ 0BD3:2974 0002 C=BSS    S=_BSS           G=DGROUP  M=FSM.C      ACBP=48
+ 0BD3:2976 066C C=BSS    S=_BSS           G=DGROUP  M=PPP.C      ACBP=48
+ 0BD3:2FE2 0176 C=BSS    S=_BSS           G=DGROUP  M=N8250.C    ACBP=48
+ 0BD3:3158 0000 C=BSS    S=_BSS           G=DGROUP  M=CRITICAL.ASM ACBP=48
+ 0BD3:3158 0000 C=BSS    S=_BSS           G=DGROUP  M=BYTEORDE.ASM ACBP=48
+ 0BD3:3158 00F0 C=BSS    S=_BSS           G=DGROUP  M=PKTDRVRE.C ACBP=48
+ 0BD3:3248 0190 C=BSS    S=_BSS           G=DGROUP  M=OPTSDOS.C  ACBP=48
+ 0BD3:33D8 06EA C=BSS    S=_BSS           G=DGROUP  M=DOSMAIN.C  ACBP=48
+ 0BD3:3AC2 0040 C=BSS    S=_BSS           G=DGROUP  M=ATEXIT     ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=DOSCREAT   ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=DOSOPEN    ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=DOSREAD    ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=DOSWRITE   ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=GETVECT    ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=IOERROR    ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=LONGTOA    ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=SCANTOL    ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=SEGREAD    ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=VPRINTER   ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=BRK        ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=CORELEFT   ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=INTDOS     ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=MEMCHR     ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=MEMCMP     ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=MEMCPY     ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=MEMSET     ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=MOVMEM     ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=STRCAT     ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=STRCHR     ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=STRCMP     ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=STRCPY     ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=STRLEN     ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=STRNCPY    ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=STRNICMP   ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=FMEMCMP    ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=FMEMCPY    ACBP=48
+ 0BD3:3B02 0000 C=BSS    S=_BSS           G=DGROUP  M=FMEMSET    ACBP=48
+ 0BD3:3B02 0000 C=BSSEND S=_BSSEND        G=DGROUP  M=c0.ASM     ACBP=28
+ 0F84:0000 0080 C=STACK  S=_STACK         G=(none)  M=c0.ASM     ACBP=74
+
+  Address         Publics by Name
+
+ 0000:7F82 idle  @htonl
+ 0000:7F88 idle  @htons
+ 0BD3:0000 idle  DATASEG@
+ 0000:028D idle  DGROUP@
+ 0000:A9ED idle  F_LDIV@
+ 0000:A9FC idle  F_LMOD@
+ 0000:A9F4 idle  F_LUDIV@
+ 0000:AA04 idle  F_LUMOD@
+ 0000:AA9B idle  F_LXLSH@
+ 0000:AABC idle  F_LXRSH@
+ 0000:AADC idle  F_LXURSH@
+ 0000:A9ED idle  LDIV@
+ 0000:A9FC idle  LMOD@
+ 0000:A9F4 idle  LUDIV@
+ 0000:AA04 idle  LUMOD@
+ 0000:AA9B idle  LXLSH@
+ 0000:AABC idle  LXRSH@
+ 0000:AADC idle  LXURSH@
+ 0000:A9EA       N_LDIV@
+ 0000:A9F9 idle  N_LMOD@
+ 0000:A9F1 idle  N_LUDIV@
+ 0000:AA01 idle  N_LUMOD@
+ 0000:AA98       N_LXLSH@
+ 0000:ABDF       N_LXMUL@
+ 0000:AAB9       N_LXRSH@
+ 0000:AAD9       N_LXURSH@
+ 0000:ABF6       N_SCOPY@
+ 0000:0278       _abort
+ 0000:82EC idle  _arp_reply
+ 0BD3:2FE4       _Asy
+ 0000:7E57       _asy0vec
+ 0000:7E91       _asy1vec
+ 0000:7ECB       _asy2vec
+ 0000:7F05       _asy3vec
+ 0000:79FF idle  _asyf_getc
+ 0000:7A35 idle  _asyf_putc
+ 0000:79DF idle  _asyf_rxcheck
+ 0000:79EF idle  _asyf_txcheck
+ 0000:75B9       _asyint
+ 0000:A0CD       _asyrxschedule
+ 0000:7904       _asytimer
+ 0000:79B1       _asy_chkirqvecs
+ 0BD3:1B08       _asy_exportinfo
+ 0000:7A6E       _asy_info
+ 0000:6F00       _asy_init
+ 0000:72F9       _asy_ioctl
+ 0000:74D8 idle  _asy_read
+ 0000:755F       _asy_rxcheck
+ 0000:72CF       _asy_set_ppp
+ 0000:720D idle  _asy_speed
+ 0000:712E       _asy_stop
+ 0000:74B3       _asy_txcheck
+ 0000:7436       _asy_write
+ 0000:A800       _atexit
+ 0000:0507       _auth_ip_addr
+ 0000:03D6       _auth_peer_fail
+ 0000:03E8       _auth_peer_success
+ 0BD3:1CDE       _auth_required
+ 0000:0440       _auth_withpeer_fail
+ 0000:0445       _auth_withpeer_success
+ 0000:04B4       _bad_ip_adrs
+ 0BD3:2216 idle  _baud_rate
+ 0000:8400 idle  _bootp_reply
+ 0000:B34D idle  _brk
+ 0000:9746 idle  _brkhandler
+ 0000:A2FC idle  _calltimeout
+ 0000:0498 idle  _check_auth_options
+ 0000:0499       _check_passwd
+ 0000:6B90       _cifaddr
+ 0000:6B94       _cifdefaultroute
+ 0000:6B98       _cifproxyarp
+ 0000:975E idle  _close_DOS_handles
+ 0BD3:221C       _comopen
+ 0BD3:1CEC       _connector
+ 0000:7D9D       _copy_done
+ 0000:B369       _coreleft
+ 0000:7C30       _crithandler
+ 0BD3:1CD2       _crtscts
+ 0BD3:1CCE       _debug
+ 0000:A6DC       _demuxprotrej
+ 0000:A733       _die
+ 0000:7D44       _dirps
+ 0BD3:0094       _errno
+ 0000:A974       _exit
+ 0000:9813       _exit_fn1
+ 0000:A3F8 idle  _format_packet
+ 0000:B41D       _free
+ 0000:97A3 idle  _free_DOS_environment
+ 0000:4D57       _fsm_close
+ 0000:4BB5       _fsm_init
+ 0000:4F03       _fsm_input
+ 0000:4C3E       _fsm_lowerdown
+ 0000:4BE1       _fsm_lowerup
+ 0000:4CD9       _fsm_open
+ 0000:55FA       _fsm_protreject
+ 0000:57D2       _fsm_sdata
+ 0000:A9AF       _getcbrk
+ 0000:7D50 idle  _getindosflag
+ 0000:966F       _getjiffies
+ 0000:A62F       _GetMask
+ 0000:A9CA       _getvect
+ 0000:06B8       _getword
+ 0000:7584 idle  _get_asy
+ 0000:7D72       _get_buffer
+ 0000:7885       _get_rlsd_asy
+ 0BD3:221A       _going_resident
+ 0000:801F       _handle_ip_packet
+ 0BD3:3388       _hostname
+ 0BD3:3AC0 idle  _hungup
+ 0BD3:2214       _ifunit
+ 0000:7DC7       _inchksum
+ 0000:A75C       _inet_addr
+ 0BD3:1CD6       _inspeed
+ 0000:7C80       _int08handler
+ 0000:B398       _intdos
+ 0000:B3BA idle  _intdosx
+ 0BD3:2892       _ipcp_allowoptions
+ 0000:0AD0       _ipcp_close
+ 0BD3:01CE idle  _ipcp_codenames
+ 0BD3:28BC       _ipcp_fsm
+ 0BD3:28A0 idle  _ipcp_gotoptions
+ 0BD3:2884 idle  _ipcp_hisoptions
+ 0000:09EE       _ipcp_init
+ 0000:0B0F       _ipcp_input
+ 0000:0AFA       _ipcp_lowerdown
+ 0000:0AE5       _ipcp_lowerup
+ 0000:0ABB       _ipcp_open
+ 0000:1FD2       _ipcp_printpkt
+ 0000:0B2C       _ipcp_protrej
+ 0BD3:28AE       _ipcp_wantoptions
+ 0000:09AF       _ip_ntoa
+ 0BD3:1B06       _Isat
+ 0000:6ACA       _isifup
+ 0000:7D38 idle  _istate
+ 0BD3:1C36       _jiffies
+ 0BD3:1C31       _jifflag
+ 0BD3:1CD0       _kdebugflag
+ 0BD3:34DA idle  _kill_link
+ 0BD3:2921       _lcp_allowoptions
+ 0000:2C0A       _lcp_close
+ 0BD3:0794 idle  _lcp_codenames
+ 0BD3:1CE2       _lcp_echo_fails
+ 0BD3:1CE0       _lcp_echo_interval
+ 0BD3:295A       _lcp_fsm
+ 0BD3:2934       _lcp_gotoptions
+ 0BD3:290E       _lcp_hisoptions
+ 0000:2ADC       _lcp_init
+ 0000:2CE7       _lcp_input
+ 0BD3:0792 idle  _lcp_loopbackfail
+ 0000:2CD2       _lcp_lowerdown
+ 0000:2C49       _lcp_lowerup
+ 0000:2BC1       _lcp_open
+ 0000:466D       _lcp_printpkt
+ 0000:2EA5       _lcp_protrej
+ 0000:2ECE       _lcp_sprotrej
+ 0BD3:2947       _lcp_wantoptions
+ 0000:02C6       _link_down
+ 0000:02D8       _link_established
+ 0000:0291       _link_required
+ 0000:0296       _link_terminated
+ 0BD3:286A       _locipstr
+ 0BD3:2FDE       _locipval
+ 0000:A3AC idle  _log_packet
+ 0000:099F       _magic
+ 0000:0981       _magic_init
+ 0000:9A4C       _main
+ 0000:97D3       _main_chkirqvecs
+ 0000:B4EC       _malloc
+ 0000:B870       _memchr
+ 0000:B88F       _memcmp
+ 0000:B8B8       _memcpy
+ 0000:B960 idle  _memmove
+ 0000:B8FD       _memset
+ 0BD3:1CD4       _modem
+ 0000:B917       _movmem
+ 0BD3:287C       _namsrvaddr
+ 0BD3:1CDA       _netmask
+ 0BD3:284A       _netmaskstr
+ 0BD3:2FD6       _netmaskval
+ 0000:A73F       _novm
+ 0000:8C1A       _options_for_tty
+ 0000:8A9D       _options_from_file
+ 0000:8C0D       _options_from_user
+ 0BD3:3298 idle  _our_name
+ 0BD3:34E0       _outpacket_buf
+ 0000:A368       _output
+ 0000:89D5       _parse_args
+ 0BD3:32E8       _passwd
+ 0BD3:2848       _peermruval
+ 0BD3:2974       _peer_mru
+ 0BD3:34DE       _phase
+ 0000:87B3       _pktdriver
+ 0BD3:1CEA       _pktint
+ 0000:7DFB       _pktinthandler
+ 0BD3:1CE6       _portbase
+ 0BD3:1CE4       _portirq
+ 0BD3:1CE8       _portnum
+ 0BD3:1052 idle  _ppp_crc16_table
+ 0000:5F40       _ppp_dev_close
+ 0000:5D56       _ppp_dev_open
+ 0000:699D       _ppp_dev_xmit
+ 0000:5A1F       _ppp_recv_config
+ 0000:58E7       _ppp_send_config
+ 0000:5C6D       _ppp_set_debug
+ 0000:5D01       _ppp_set_tty
+ 0000:5B27       _ppp_set_xaccm
+ 0000:601D       _ppp_tty_receive
+ 0000:6811       _ppp_tty_write
+ 0000:A543       _print_string
+ 0BD3:34DC       _progname
+ 0000:A4DF idle  _pr_log
+ 0000:A72A idle  _quit
+ 0000:AC23       _rand
+ 0000:A0E8       _rcv_proto_unknown
+ 0000:B643 idle  _realloc
+ 0BD3:285A       _remipstr
+ 0BD3:2FDA       _remipval
+ 0BD3:3248 idle  _remote_name
+ 0000:7D62       _restore
+ 0000:B359 idle  _sbrk
+ 0000:ADF3       _segread
+ 0000:7CFA       _set08handler
+ 0000:A9B9       _setcbrk
+ 0000:B8D7 idle  _setmem
+ 0000:A9D9       _setvect
+ 0000:6BA4       _sifaddr
+ 0000:6B9C       _sifdefaultroute
+ 0000:6B26       _sifdown
+ 0000:6BA0       _sifproxyarp
+ 0000:6A60       _sifup
+ 0000:6C6C idle  _sifvjcomp
+ 0000:96E9 idle  _sleep
+ 0000:B99F       _sprintf
+ 0000:AC12       _srand
+ 0BD3:1C3A       _StktopC
+ 0000:B9D8       _strcat
+ 0000:BA11       _strchr
+ 0000:BA47       _strcmp
+ 0000:BA76       _strcpy
+ 0000:BA98       _strdup
+ 0000:BACA       _strlen
+ 0000:BAE4       _strncat
+ 0000:BB28       _strncpy
+ 0000:BB54       _strnicmp
+ 0000:BB97       _strrchr
+ 0000:BBEE       _strtoul
+ 0000:A5A2       _syslog
+ 0000:A241       _timeout
+ 0BD3:1C32       _timercount
+ 0000:AE08       _toupper
+ 0000:A1ED       _untimeout
+ 0BD3:28D6       _upap
+ 0000:22C9       _upap_authpeer
+ 0000:2278       _upap_authwithpeer
+ 0BD3:0500 idle  _upap_codenames
+ 0000:222D       _upap_init
+ 0000:2470       _upap_input
+ 0000:23C9       _upap_lowerdown
+ 0000:236E       _upap_lowerup
+ 0000:2938       _upap_printpkt
+ 0000:240D       _upap_protrej
+ 0BD3:3338       _user
+ 0000:8948       _verify_packet_int
+ 0000:B9BC       _vsprintf
+ 0000:78AC idle  _wait_rlsd_asy
+ 0BD3:28EE       _xmit_accm
+ 0000:1000 idle  __AHINCR
+ 0000:000C idle  __AHSHIFT
+ 0BD3:27E6 idle  __argc
+ 0BD3:27E8 idle  __argv
+ 0BD3:25DC       __atexitcnt
+ 0BD3:3AC2       __atexittbl
+ 0BD3:00A2 idle  __brklvl
+ 0BD3:0084       __C0argc
+ 0BD3:0086       __C0argv
+ 0BD3:0088 idle  __C0environ
+ 0000:A995       __cexit
+ 0000:016F       __checknull
+ 0000:015C       __cleanup
+ 0BD3:25DE       __ctype
+ 0000:0000  Abs  __cvtfak
+ 0000:A9A3 idle  __c_exit
+ 0000:06B4 idle  __dferror
+ 0000:064C idle  __dgetc
+ 0BD3:26E6 idle  __doserrno
+ 0000:AB33       __DOSERROR
+ 0BD3:26E8 idle  __dosErrorToSV
+ 0000:A824       __dos_close
+ 0000:A85D       __dos_creat
+ 0000:A871 idle  __dos_creatnew
+ 0000:A885       __dos_freemem
+ 0000:A89B       __dos_keep
+ 0000:A8AD       __dos_open
+ 0000:A8E0       __dos_read
+ 0000:A903       __dos_write
+ 0000:06A8 idle  __dungetc
+ 0BD3:008A       __envLng
+ 0BD3:008C       __envseg
+ 0BD3:008E idle  __envSize
+ 0000:A983       __exit
+ 0BD3:26E0 idle  __exitbuf
+ 0BD3:26E2 idle  __exitfopen
+ 0BD3:26E4 idle  __exitopen
+ 0BD3:27E0 idle  __first
+ 0000:BC93       __fmemcmp
+ 0000:BCBB       __fmemcpy
+ 0000:BD03       __fmemset
+ 0000:BCDF idle  __fsetmem
+ 0BD3:009E idle  __heapbase
+ 0BD3:2210       __heaplen
+ 0BD3:00A6 idle  __heaptop
+ 0BD3:0074 idle  __Int0Vector
+ 0BD3:0078 idle  __Int4Vector
+ 0BD3:007C idle  __Int5Vector
+ 0BD3:0080 idle  __Int6Vector
+ 0000:AAFA       __IOERROR
+ 0BD3:27E2 idle  __last
+ 0000:AB45       __LONGTOA
+ 0000:028F idle  __MMODEL
+ 0BD3:2212       __nfile
+ 0BD3:0092       __osmajor
+ 0BD3:0093       __osminor
+ 0BD3:0092 idle  __osversion
+ 0BD3:0090       __psp
+ 0000:B694       __REALCVT
+ 0BD3:27F4       __RealCvtVector
+ 0000:01EC       __restorezero
+ 0BD3:27E4 idle  __rover
+ 0BD3:27F6 idle  __ScanTodVector
+ 0000:AC74       __scantol
+ 0000:0000  Abs  __setargv__
+ 0000:A7FF       __setupio
+ 0000:B7AF       __spawn
+ 0BD3:0096 idle  __StartTime
+ 0BD3:220E       __stklen
+ 0000:0197       __terminate
+ 0000:ABC2 idle  __UTOA
+ 0BD3:0092 idle  __version
+ 0000:AE4C       __VPRINTER
+ 0000:B2FA       ___brk
+ 0BD3:009C       ___brklvl
+ 0BD3:009A idle  ___heapbase
+ 0000:B31C       ___sbrk
+
+  Address         Publics by Value
+
+ 0000:0000  Abs  __setargv__
+ 0000:0000  Abs  __cvtfak
+ 0000:000C idle  __AHSHIFT
+ 0000:1000 idle  __AHINCR
+ 0000:015C       __cleanup
+ 0000:016F       __checknull
+ 0000:0197       __terminate
+ 0000:01EC       __restorezero
+ 0000:0278       _abort
+ 0000:028D idle  DGROUP@
+ 0000:028F idle  __MMODEL
+ 0000:0291       _link_required
+ 0000:0296       _link_terminated
+ 0000:02C6       _link_down
+ 0000:02D8       _link_established
+ 0000:03D6       _auth_peer_fail
+ 0000:03E8       _auth_peer_success
+ 0000:0440       _auth_withpeer_fail
+ 0000:0445       _auth_withpeer_success
+ 0000:0498 idle  _check_auth_options
+ 0000:0499       _check_passwd
+ 0000:04B4       _bad_ip_adrs
+ 0000:0507       _auth_ip_addr
+ 0000:064C idle  __dgetc
+ 0000:06A8 idle  __dungetc
+ 0000:06B4 idle  __dferror
+ 0000:06B8       _getword
+ 0000:0981       _magic_init
+ 0000:099F       _magic
+ 0000:09AF       _ip_ntoa
+ 0000:09EE       _ipcp_init
+ 0000:0ABB       _ipcp_open
+ 0000:0AD0       _ipcp_close
+ 0000:0AE5       _ipcp_lowerup
+ 0000:0AFA       _ipcp_lowerdown
+ 0000:0B0F       _ipcp_input
+ 0000:0B2C       _ipcp_protrej
+ 0000:1FD2       _ipcp_printpkt
+ 0000:222D       _upap_init
+ 0000:2278       _upap_authwithpeer
+ 0000:22C9       _upap_authpeer
+ 0000:236E       _upap_lowerup
+ 0000:23C9       _upap_lowerdown
+ 0000:240D       _upap_protrej
+ 0000:2470       _upap_input
+ 0000:2938       _upap_printpkt
+ 0000:2ADC       _lcp_init
+ 0000:2BC1       _lcp_open
+ 0000:2C0A       _lcp_close
+ 0000:2C49       _lcp_lowerup
+ 0000:2CD2       _lcp_lowerdown
+ 0000:2CE7       _lcp_input
+ 0000:2EA5       _lcp_protrej
+ 0000:2ECE       _lcp_sprotrej
+ 0000:466D       _lcp_printpkt
+ 0000:4BB5       _fsm_init
+ 0000:4BE1       _fsm_lowerup
+ 0000:4C3E       _fsm_lowerdown
+ 0000:4CD9       _fsm_open
+ 0000:4D57       _fsm_close
+ 0000:4F03       _fsm_input
+ 0000:55FA       _fsm_protreject
+ 0000:57D2       _fsm_sdata
+ 0000:58E7       _ppp_send_config
+ 0000:5A1F       _ppp_recv_config
+ 0000:5B27       _ppp_set_xaccm
+ 0000:5C6D       _ppp_set_debug
+ 0000:5D01       _ppp_set_tty
+ 0000:5D56       _ppp_dev_open
+ 0000:5F40       _ppp_dev_close
+ 0000:601D       _ppp_tty_receive
+ 0000:6811       _ppp_tty_write
+ 0000:699D       _ppp_dev_xmit
+ 0000:6A60       _sifup
+ 0000:6ACA       _isifup
+ 0000:6B26       _sifdown
+ 0000:6B90       _cifaddr
+ 0000:6B94       _cifdefaultroute
+ 0000:6B98       _cifproxyarp
+ 0000:6B9C       _sifdefaultroute
+ 0000:6BA0       _sifproxyarp
+ 0000:6BA4       _sifaddr
+ 0000:6C6C idle  _sifvjcomp
+ 0000:6F00       _asy_init
+ 0000:712E       _asy_stop
+ 0000:720D idle  _asy_speed
+ 0000:72CF       _asy_set_ppp
+ 0000:72F9       _asy_ioctl
+ 0000:7436       _asy_write
+ 0000:74B3       _asy_txcheck
+ 0000:74D8 idle  _asy_read
+ 0000:755F       _asy_rxcheck
+ 0000:7584 idle  _get_asy
+ 0000:75B9       _asyint
+ 0000:7885       _get_rlsd_asy
+ 0000:78AC idle  _wait_rlsd_asy
+ 0000:7904       _asytimer
+ 0000:79B1       _asy_chkirqvecs
+ 0000:79DF idle  _asyf_rxcheck
+ 0000:79EF idle  _asyf_txcheck
+ 0000:79FF idle  _asyf_getc
+ 0000:7A35 idle  _asyf_putc
+ 0000:7A6E       _asy_info
+ 0000:7C30       _crithandler
+ 0000:7C80       _int08handler
+ 0000:7CFA       _set08handler
+ 0000:7D38 idle  _istate
+ 0000:7D44       _dirps
+ 0000:7D50 idle  _getindosflag
+ 0000:7D62       _restore
+ 0000:7D72       _get_buffer
+ 0000:7D9D       _copy_done
+ 0000:7DC7       _inchksum
+ 0000:7DFB       _pktinthandler
+ 0000:7E57       _asy0vec
+ 0000:7E91       _asy1vec
+ 0000:7ECB       _asy2vec
+ 0000:7F05       _asy3vec
+ 0000:7F82 idle  @htonl
+ 0000:7F88 idle  @htons
+ 0000:801F       _handle_ip_packet
+ 0000:82EC idle  _arp_reply
+ 0000:8400 idle  _bootp_reply
+ 0000:87B3       _pktdriver
+ 0000:8948       _verify_packet_int
+ 0000:89D5       _parse_args
+ 0000:8A9D       _options_from_file
+ 0000:8C0D       _options_from_user
+ 0000:8C1A       _options_for_tty
+ 0000:966F       _getjiffies
+ 0000:96E9 idle  _sleep
+ 0000:9746 idle  _brkhandler
+ 0000:975E idle  _close_DOS_handles
+ 0000:97A3 idle  _free_DOS_environment
+ 0000:97D3       _main_chkirqvecs
+ 0000:9813       _exit_fn1
+ 0000:9A4C       _main
+ 0000:A0CD       _asyrxschedule
+ 0000:A0E8       _rcv_proto_unknown
+ 0000:A1ED       _untimeout
+ 0000:A241       _timeout
+ 0000:A2FC idle  _calltimeout
+ 0000:A368       _output
+ 0000:A3AC idle  _log_packet
+ 0000:A3F8 idle  _format_packet
+ 0000:A4DF idle  _pr_log
+ 0000:A543       _print_string
+ 0000:A5A2       _syslog
+ 0000:A62F       _GetMask
+ 0000:A6DC       _demuxprotrej
+ 0000:A72A idle  _quit
+ 0000:A733       _die
+ 0000:A73F       _novm
+ 0000:A75C       _inet_addr
+ 0000:A7FF       __setupio
+ 0000:A800       _atexit
+ 0000:A824       __dos_close
+ 0000:A85D       __dos_creat
+ 0000:A871 idle  __dos_creatnew
+ 0000:A885       __dos_freemem
+ 0000:A89B       __dos_keep
+ 0000:A8AD       __dos_open
+ 0000:A8E0       __dos_read
+ 0000:A903       __dos_write
+ 0000:A974       _exit
+ 0000:A983       __exit
+ 0000:A995       __cexit
+ 0000:A9A3 idle  __c_exit
+ 0000:A9AF       _getcbrk
+ 0000:A9B9       _setcbrk
+ 0000:A9CA       _getvect
+ 0000:A9D9       _setvect
+ 0000:A9EA       N_LDIV@
+ 0000:A9ED idle  LDIV@
+ 0000:A9ED idle  F_LDIV@
+ 0000:A9F1 idle  N_LUDIV@
+ 0000:A9F4 idle  F_LUDIV@
+ 0000:A9F4 idle  LUDIV@
+ 0000:A9F9 idle  N_LMOD@
+ 0000:A9FC idle  F_LMOD@
+ 0000:A9FC idle  LMOD@
+ 0000:AA01 idle  N_LUMOD@
+ 0000:AA04 idle  LUMOD@
+ 0000:AA04 idle  F_LUMOD@
+ 0000:AA98       N_LXLSH@
+ 0000:AA9B idle  LXLSH@
+ 0000:AA9B idle  F_LXLSH@
+ 0000:AAB9       N_LXRSH@
+ 0000:AABC idle  LXRSH@
+ 0000:AABC idle  F_LXRSH@
+ 0000:AAD9       N_LXURSH@
+ 0000:AADC idle  LXURSH@
+ 0000:AADC idle  F_LXURSH@
+ 0000:AAFA       __IOERROR
+ 0000:AB33       __DOSERROR
+ 0000:AB45       __LONGTOA
+ 0000:ABC2 idle  __UTOA
+ 0000:ABDF       N_LXMUL@
+ 0000:ABF6       N_SCOPY@
+ 0000:AC12       _srand
+ 0000:AC23       _rand
+ 0000:AC74       __scantol
+ 0000:ADF3       _segread
+ 0000:AE08       _toupper
+ 0000:AE4C       __VPRINTER
+ 0000:B2FA       ___brk
+ 0000:B31C       ___sbrk
+ 0000:B34D idle  _brk
+ 0000:B359 idle  _sbrk
+ 0000:B369       _coreleft
+ 0000:B398       _intdos
+ 0000:B3BA idle  _intdosx
+ 0000:B41D       _free
+ 0000:B4EC       _malloc
+ 0000:B643 idle  _realloc
+ 0000:B694       __REALCVT
+ 0000:B7AF       __spawn
+ 0000:B870       _memchr
+ 0000:B88F       _memcmp
+ 0000:B8B8       _memcpy
+ 0000:B8D7 idle  _setmem
+ 0000:B8FD       _memset
+ 0000:B917       _movmem
+ 0000:B960 idle  _memmove
+ 0000:B99F       _sprintf
+ 0000:B9BC       _vsprintf
+ 0000:B9D8       _strcat
+ 0000:BA11       _strchr
+ 0000:BA47       _strcmp
+ 0000:BA76       _strcpy
+ 0000:BA98       _strdup
+ 0000:BACA       _strlen
+ 0000:BAE4       _strncat
+ 0000:BB28       _strncpy
+ 0000:BB54       _strnicmp
+ 0000:BB97       _strrchr
+ 0000:BBEE       _strtoul
+ 0000:BC93       __fmemcmp
+ 0000:BCBB       __fmemcpy
+ 0000:BCDF idle  __fsetmem
+ 0000:BD03       __fmemset
+ 0BD3:0000 idle  DATASEG@
+ 0BD3:0074 idle  __Int0Vector
+ 0BD3:0078 idle  __Int4Vector
+ 0BD3:007C idle  __Int5Vector
+ 0BD3:0080 idle  __Int6Vector
+ 0BD3:0084       __C0argc
+ 0BD3:0086       __C0argv
+ 0BD3:0088 idle  __C0environ
+ 0BD3:008A       __envLng
+ 0BD3:008C       __envseg
+ 0BD3:008E idle  __envSize
+ 0BD3:0090       __psp
+ 0BD3:0092 idle  __osversion
+ 0BD3:0092       __osmajor
+ 0BD3:0092 idle  __version
+ 0BD3:0093       __osminor
+ 0BD3:0094       _errno
+ 0BD3:0096 idle  __StartTime
+ 0BD3:009A idle  ___heapbase
+ 0BD3:009C       ___brklvl
+ 0BD3:009E idle  __heapbase
+ 0BD3:00A2 idle  __brklvl
+ 0BD3:00A6 idle  __heaptop
+ 0BD3:01CE idle  _ipcp_codenames
+ 0BD3:0500 idle  _upap_codenames
+ 0BD3:0792 idle  _lcp_loopbackfail
+ 0BD3:0794 idle  _lcp_codenames
+ 0BD3:1052 idle  _ppp_crc16_table
+ 0BD3:1B06       _Isat
+ 0BD3:1B08       _asy_exportinfo
+ 0BD3:1C31       _jifflag
+ 0BD3:1C32       _timercount
+ 0BD3:1C36       _jiffies
+ 0BD3:1C3A       _StktopC
+ 0BD3:1CCE       _debug
+ 0BD3:1CD0       _kdebugflag
+ 0BD3:1CD2       _crtscts
+ 0BD3:1CD4       _modem
+ 0BD3:1CD6       _inspeed
+ 0BD3:1CDA       _netmask
+ 0BD3:1CDE       _auth_required
+ 0BD3:1CE0       _lcp_echo_interval
+ 0BD3:1CE2       _lcp_echo_fails
+ 0BD3:1CE4       _portirq
+ 0BD3:1CE6       _portbase
+ 0BD3:1CE8       _portnum
+ 0BD3:1CEA       _pktint
+ 0BD3:1CEC       _connector
+ 0BD3:220E       __stklen
+ 0BD3:2210       __heaplen
+ 0BD3:2212       __nfile
+ 0BD3:2214       _ifunit
+ 0BD3:2216 idle  _baud_rate
+ 0BD3:221A       _going_resident
+ 0BD3:221C       _comopen
+ 0BD3:25DC       __atexitcnt
+ 0BD3:25DE       __ctype
+ 0BD3:26E0 idle  __exitbuf
+ 0BD3:26E2 idle  __exitfopen
+ 0BD3:26E4 idle  __exitopen
+ 0BD3:26E6 idle  __doserrno
+ 0BD3:26E8 idle  __dosErrorToSV
+ 0BD3:27E0 idle  __first
+ 0BD3:27E2 idle  __last
+ 0BD3:27E4 idle  __rover
+ 0BD3:27E6 idle  __argc
+ 0BD3:27E8 idle  __argv
+ 0BD3:27F4       __RealCvtVector
+ 0BD3:27F6 idle  __ScanTodVector
+ 0BD3:2848       _peermruval
+ 0BD3:284A       _netmaskstr
+ 0BD3:285A       _remipstr
+ 0BD3:286A       _locipstr
+ 0BD3:287C       _namsrvaddr
+ 0BD3:2884 idle  _ipcp_hisoptions
+ 0BD3:2892       _ipcp_allowoptions
+ 0BD3:28A0 idle  _ipcp_gotoptions
+ 0BD3:28AE       _ipcp_wantoptions
+ 0BD3:28BC       _ipcp_fsm
+ 0BD3:28D6       _upap
+ 0BD3:28EE       _xmit_accm
+ 0BD3:290E       _lcp_hisoptions
+ 0BD3:2921       _lcp_allowoptions
+ 0BD3:2934       _lcp_gotoptions
+ 0BD3:2947       _lcp_wantoptions
+ 0BD3:295A       _lcp_fsm
+ 0BD3:2974       _peer_mru
+ 0BD3:2FD6       _netmaskval
+ 0BD3:2FDA       _remipval
+ 0BD3:2FDE       _locipval
+ 0BD3:2FE4       _Asy
+ 0BD3:3248 idle  _remote_name
+ 0BD3:3298 idle  _our_name
+ 0BD3:32E8       _passwd
+ 0BD3:3338       _user
+ 0BD3:3388       _hostname
+ 0BD3:34DA idle  _kill_link
+ 0BD3:34DC       _progname
+ 0BD3:34DE       _phase
+ 0BD3:34E0       _outpacket_buf
+ 0BD3:3AC0 idle  _hungup
+ 0BD3:3AC2       __atexittbl
+
+Error: Undefined symbol _htonl in module AUTH.C
+Error: Undefined symbol _htons in module IPCP.C
+Program entry point at 0000:0000
+
