@@ -299,4 +299,15 @@ u_int32_t GetMask(u_int32_t, u_int32_t);
 #define MAX(a, b)       ((a) > (b)? (a): (b))
 #endif
 
+/*--- Definitions from the default private ppp interface ... */
+int sifaddr(int, u_int32_t, u_int32_t, u_int32_t);
+int sifup(int);
+int sifdown(int);
+int sifdefaultroute(int, u_int32_t);
+int cifdefaultroute(int, u_int32_t);
+int cifaddr(int, u_int32_t, u_int32_t);
+int sifproxyarp(int,u_int32_t);
+int cifproxyarp(int,u_int32_t);
+int auth_ip_addr(int, u_int32_t);
+
 #endif /* __PPP_H__ */

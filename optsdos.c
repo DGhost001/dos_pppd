@@ -76,10 +76,10 @@ int getword(int, char *, int *, const char *);
  * Prototypes
  */
 #ifdef DEBUGMAIN
-static int setdebug(void);
+static int setdebug(char **);
 static int setkdebug(char **);
 #endif  /* DEBUGMAIN */
-static int noopt(void);
+static int noopt(char **);
 static int setipaddr(char *arg);
 
 #ifdef ALLOWVJ
@@ -88,7 +88,7 @@ static int setnovjccomp(void);
 static int setvjslots(char **);
 #endif  /* ALLOWVJ */
 
-static int nopap(void);
+static int nopap(char **);
 static int setupapfile(char **);
 
 #ifdef ALLOWCHAP
@@ -97,24 +97,24 @@ static int reqchap(void);
 #endif  /* ALLOWCHAP */
 
 static int setspeed(char *);
-static int noaccomp(void);
-static int noasyncmap(void);
-static int noipaddr(void);
-static int nomagicnumber(void);
+static int noaccomp(char **);
+static int noasyncmap(char **);
+static int noipaddr(char **);
+static int nomagicnumber(char **);
 static int setasyncmap(char **);
 static int setescape(char **);
 static int setmru(char **);
 static int setmtu(char **);
-static int nomru(void);
-static int nopcomp(void);
+static int nomru(char **);
+static int nopcomp(char **);
 static int setconnector(char **);
 static int setdomain(char **);
 static int setnetmask(char **);
-static int setcrtscts(void);
-static int setnocrtscts(void);
-static int setxonxoff(void);
-static int setmodem(void);
-static int setlocal(void);
+static int setcrtscts(char **);
+static int setnocrtscts(char **);
+static int setxonxoff(char **);
+static int setmodem(char **);
+static int setlocal(char **);
 
 #ifdef ALLOWCHAP
 static int setname(char **);
@@ -143,8 +143,8 @@ static int setchapchal(char **);
 static int setchapintv(char **);
 #endif  /* ALLOWCHAP */
 
-static int setipcpaccl(void);
-static int setipcpaccr(void);
+static int setipcpaccl(char **);
+static int setipcpaccr(char **);
 static int setlcpechointv(char **);
 static int setlcpechofails(char **);
 
@@ -193,7 +193,7 @@ static void usage(void);
 static struct cmd {
     char *cmd_name;
     int num_args;
-    int (*cmd_func)();
+    int (*cmd_func)(char **);
 } cmds[] = {
     {"-all", 0, noopt},         /* Don't request/allow any options */
     {"-ac", 0, noaccomp},       /* Disable Address/Control compress */
@@ -695,7 +695,8 @@ static int readfile(char **argv)
 /*
  * setdebug - Set debug (command line argument).
  */
-static int setdebug(void)
+#pragma argsused
+static int setdebug(char** argv)
 {
     debug++;
 
@@ -714,7 +715,8 @@ static int setkdebug(char **argv)
 /*
  * noopt - Disable all options.
  */
-static int noopt(void)
+#pragma argsused
+static int noopt(char ** argv)
 {
     BZERO((char *)&lcp_wantoptions[0], sizeof(struct lcp_options));
     BZERO((char *)&lcp_allowoptions[0], sizeof(struct lcp_options));
@@ -732,7 +734,8 @@ static int noopt(void)
 /*
  * noaccomp - Disable Address/Control field compression negotiation.
  */
-static int noaccomp(void)
+#pragma argsused
+static int noaccomp(char **argv)
 {
     lcp_wantoptions[0].neg_accompression = 0;
     lcp_allowoptions[0].neg_accompression = 0;
@@ -743,7 +746,8 @@ static int noaccomp(void)
 /*
  * noasyncmap - Disable async map negotiation.
  */
-static int noasyncmap(void)
+#pragma argsused
+static int noasyncmap(char **argv)
 {
     lcp_wantoptions[0].neg_asyncmap = 0;
     lcp_allowoptions[0].neg_asyncmap = 0;
@@ -754,7 +758,8 @@ static int noasyncmap(void)
 /*
  * noipaddr - Disable IP address negotiation.
  */
-static int noipaddr(void)
+#pragma argsused
+static int noipaddr(char **argv)
 {
     ipcp_wantoptions[0].neg_addr = 0;
     ipcp_allowoptions[0].neg_addr = 0;
@@ -765,7 +770,8 @@ static int noipaddr(void)
 /*
  * nomagicnumber - Disable magic number negotiation.
  */
-static int nomagicnumber(void)
+#pragma argsused
+static int nomagicnumber(char **argv)
 {
     lcp_wantoptions[0].neg_magicnumber = 0;
     lcp_allowoptions[0].neg_magicnumber = 0;
@@ -776,7 +782,8 @@ static int nomagicnumber(void)
 /*
  * nomru - Disable mru negotiation.
  */
-static int nomru(void)
+#pragma argsused
+static int nomru(char **argv)
 {
     lcp_wantoptions[0].neg_mru = 0;
     lcp_allowoptions[0].neg_mru = 0;
@@ -825,7 +832,8 @@ static int setmtu(char **argv)
 /*
  * nopcomp - Disable Protocol field compression negotiation.
  */
-static int nopcomp(void)
+#pragma argsused
+static int nopcomp(char **argv)
 {
     lcp_wantoptions[0].neg_pcompression = 0;
     lcp_allowoptions[0].neg_pcompression = 0;
@@ -836,7 +844,8 @@ static int nopcomp(void)
 /*
  * nopap - Disable PAP authentication with peer.
  */
-static int nopap(void)
+#pragma argsused
+static int nopap(char **argv)
 {
     lcp_allowoptions[0].neg_upap = 0;
 
@@ -1029,7 +1038,8 @@ static int setescape(char **argv)
 /*
  * setipcpaccl - accept peer's idea of our address
  */
-static int setipcpaccl(void)
+#pragma argsused
+static int setipcpaccl(char** argv)
 {
     ipcp_wantoptions[0].accept_local = 1;
 
@@ -1039,7 +1049,8 @@ static int setipcpaccl(void)
 /*
  * setipcpaccr - accept peer's idea of its address
  */
-static int setipcpaccr(void)
+#pragma argsused
+static int setipcpaccr(char **argv)
 {
     ipcp_wantoptions[0].accept_remote = 1;
 
@@ -1064,21 +1075,24 @@ static int setnetmask(char **argv)
     return 1;
 }
 
-static int setcrtscts(void)
+#pragma argsused
+static int setcrtscts(char **argv)
 {
     crtscts = 1;
 
     return 1;
 }
 
-static int setnocrtscts(void)
+#pragma argsused
+static int setnocrtscts(char **argv)
 {
     crtscts = -1;
 
     return 1;
 }
 
-static int setxonxoff(void)
+#pragma argsused
+static int setxonxoff(char **argv)
 {
     /* peer must escape ^S and ^Q in transmission */
     lcp_wantoptions[0].asyncmap |= 0x000A0000LU;
@@ -1090,14 +1104,16 @@ static int setxonxoff(void)
     return 1;
 }
 
-static int setmodem(void)
+#pragma argsused
+static int setmodem(char **argv)
 {
     modem = 1;
 
     return 1;
 }
 
-static int setlocal(void)
+#pragma argsused
+static int setlocal(char** argv)
 {
     modem = 0;
 

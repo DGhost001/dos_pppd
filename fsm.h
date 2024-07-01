@@ -42,21 +42,22 @@
 /*
  * Each FSM is described by a fsm_callbacks and a fsm structure.
  */
+struct fsm;
 typedef struct fsm_callbacks {
-    void (*resetci)();          /* Reset our Configuration Information */
-    int  (*cilen)();            /* Length of our Configuration Information */
-    void (*addci)();            /* Add our Configuration Information */
-    int  (*ackci)();            /* ACK our Configuration Information */
-    int  (*nakci)();            /* NAK our Configuration Information */
-    int  (*rejci)();            /* Reject our Configuration Information */
-    int  (*reqci)();            /* Request peer's Configuration Information */
-    void (*up)();               /* Called when fsm reaches OPENED state */
-    void (*down)();             /* Called when fsm leaves OPENED state */
-    void (*starting)();         /* Called when we want the lower layer */
-    void (*finished)();         /* Called when we don't want the lower layer */
-    void (*protreject)();       /* Called when Protocol-Reject received */
-    void (*retransmit)();       /* Retransmission is necessary */
-    int  (*extcode)();          /* Called when unknown code received */
+    void (*resetci)(struct fsm*);          /* Reset our Configuration Information */
+    int  (*cilen)(struct fsm*);            /* Length of our Configuration Information */
+    void (*addci)(struct fsm*, u_char*, int*);            /* Add our Configuration Information */
+    int  (*ackci)(struct fsm*, u_char*, int);            /* ACK our Configuration Information */
+    int  (*nakci)(struct fsm*, u_char*, int);            /* NAK our Configuration Information */
+    int  (*rejci)(struct fsm*, u_char*, int);            /* Reject our Configuration Information */
+    int  (*reqci)(struct fsm*,u_char*, int*, int);            /* Request peer's Configuration Information */
+    void (*up)(struct fsm*);               /* Called when fsm reaches OPENED state */
+    void (*down)(struct fsm*);             /* Called when fsm leaves OPENED state */
+    void (*starting)(struct fsm*);         /* Called when we want the lower layer */
+    void (*finished)(struct fsm*);         /* Called when we don't want the lower layer */
+    void (*protreject)(void);       /* Called when Protocol-Reject received */
+    void (*retransmit)(struct fsm*);       /* Retransmission is necessary */
+    int  (*extcode)(struct fsm*, int, int, u_char*, int);          /* Called when unknown code received */
     char *proto_name;           /* String name for protocol (for messages) */
 } fsm_callbacks;
 

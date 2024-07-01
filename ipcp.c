@@ -34,12 +34,6 @@
 #include "ipcp.h"
 #include "pathname.h"
 
-/* external funcs */
-int sifaddr(int, u_int32_t, u_int32_t, u_int32_t);
-int sifup(int);
-int sifdown(int);
-int auth_ip_addr(int, u_int32_t);
-
 /* global vars */
 ipcp_options ipcp_wantoptions[NUM_PPP]; /* Options that we want to request */
 ipcp_options ipcp_gotoptions[NUM_PPP];  /* Options that peer ack'd */

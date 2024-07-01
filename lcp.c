@@ -1637,6 +1637,7 @@ static void LcpEchoTimeout(caddr_t arg)
  * LcpEchoReply - LCP has received a reply to the echo
  */
 
+#pragma argsused
 static void lcp_received_echo_reply(fsm *f, int id, u_char *inp, int len)
 {
     u_int32_t magic;

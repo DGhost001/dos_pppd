@@ -281,7 +281,7 @@ static void fsm_timeout(caddr_t arg)
  */
 void fsm_input(fsm *f, u_char *inpacket, int l)
 {
-    u_char *inp, *outp;
+    u_char *inp;
     u_char code, id;
     int len;
 
@@ -367,7 +367,6 @@ void fsm_input(fsm *f, u_char *inpacket, int l)
  */
 static void fsm_rconfreq(fsm *f, int id, u_char *inp, int len)
 {
-    u_char *outp;
     int code, reject_if_disagree;
 
     FSMDEBUG((LOG_INFO, "fsm_rconfreq(%s): Rcvd id %d.\n", PROTO_NAME(f), id));
@@ -488,7 +487,7 @@ static void fsm_rconfack(fsm *f, int id, u_char *inp, int len)
  */
 static void fsm_rconfnakrej(fsm *f, int code, int id, u_char *inp, int len)
 {
-    int (*proc)();
+    int (*proc)(struct fsm*, u_char*, int);
     int ret;
 
     FSMDEBUG((LOG_INFO, "fsm_rconfnakrej(%s): Rcvd id %d.\n", PROTO_NAME(f), id));
@@ -674,7 +673,7 @@ void fsm_protreject(fsm *f)
 static void fsm_sconfreq(fsm *f, int retransmit)
 {
     u_char *outp;
-    int outlen, cilen;
+    int cilen;
 
 #ifdef IPX_CHANGE
     /*

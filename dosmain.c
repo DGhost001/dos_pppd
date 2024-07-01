@@ -40,7 +40,7 @@ unsigned coreleft(void);
 struct  callout {
     u_int32_t       c_time;         /* time at which to call routine */
     caddr_t         c_arg;          /* argument to routine */
-    void            (*c_func)();    /* routine */
+    void            (*c_func)(caddr_t);    /* routine */
     struct callout  *c_next;
 };
 
@@ -161,11 +161,11 @@ extern volatile uint8 jifflag;
  */
 static struct protent {
     u_short protocol;
-    void (*init)();
-    void (*input)();
-    void (*protrej)();
-    int  (*printpkt)();
-    void (*datainput)();
+    void (*init)(int);
+    void (*input)(int, u_char*,int);
+    void (*protrej)(int);
+    int  (*printpkt)(u_char *, int, void (*printer)(void *, char *, ...), void *);
+    void (*datainput)(int, u_char *, int);
     char *name;
 } prottbl[] = {
     { PPP_LCP, lcp_init, lcp_input, lcp_protrej, lcp_printpkt, NULL, "LCP" },
@@ -920,7 +920,7 @@ int rcv_proto_unknown(struct ppp *ppp, u_short protocol, u_char *p, int len)
  * untimeout - Unschedule a timeout.
  */
 
-void untimeout(void (*func)(), caddr_t arg)
+void untimeout(void (*func)(caddr_t), caddr_t arg)
 {
     struct callout **copp, *freep;
 
@@ -946,7 +946,7 @@ void untimeout(void (*func)(), caddr_t arg)
  * the kernel).
  */
 
-void timeout(void (*func)(), caddr_t arg, u_int32_t timev)
+void timeout(void (*func)(caddr_t), caddr_t arg, u_int32_t timev)
 {
     struct callout *newp, *p, **pp;
     u_int32_t timenow;
