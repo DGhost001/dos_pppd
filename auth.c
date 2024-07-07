@@ -39,6 +39,7 @@
 #include <dir.h>
 #include <stddef.h>
 #include <dos.h>
+#include <io.h>
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
@@ -782,7 +783,8 @@ int _dgetc(int fhandle)
     }
     else {
         do {
-            goterror = _dos_read(fhandle, &c, 1, &nread);
+            nread = read(fhandle, &c, 1);
+            goterror = 1 != nread;
             if ( goterror )
                 return EOF;
 

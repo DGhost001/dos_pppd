@@ -27,6 +27,8 @@
 #include "types.h"
 #include <string.h>
 #include <dos.h>
+#include <stdio.h>
+
 #include "syslog.h"
 
 #include "pppd.h"
@@ -1112,31 +1114,23 @@ int peermruval[NUM_PPP];
 
 static void ipcp_script(fsm *f, char *script)
 {
-    int handle;
-    unsigned count;
-    char iobuf[80];
+    FILE *output;
 
-    if ( _dos_creat("IP-UP.BAT", _A_NORMAL, &handle) ) {
+    output = fopen("IP-UP.BAT","rw");
+
+    if ( !output ) {
         MAINDEBUG((LOG_ERR, "Unable to create IP-UP.BAT.\n"));
-
         return;
     }
 
-    if ( (count = sprintf(iobuf, "set myip=%s\r\n", locipstr[f->unit]),
-         _dos_write(handle, iobuf, count, &count))
-         ||
-         (count = sprintf(iobuf, "set remip=%s\r\n", remipstr[f->unit]),
-         _dos_write(handle, iobuf, count, &count))
-         ||
-         (count = sprintf(iobuf, "set netmask=%s\r\n", netmaskstr[f->unit]),
-         _dos_write(handle, iobuf, count, &count))
-         ||
-         (count = sprintf(iobuf, "set peermru=%d\r\n", peermruval[f->unit]),
-         _dos_write(handle, iobuf, count, &count)) ) {
+    if( fprintf(output, "set myip=%s\r\n", locipstr[f->unit]) <= 0 ||
+        fprintf(output, "set remip=%s\r\n", remipstr[f->unit]) <= 0 ||
+        fprintf(output, "set netmask=%s\r\n", netmaskstr[f->unit])<= 0 ||
+        fprintf(output, "set peermru=%d\r\n", peermruval[f->unit])<= 0) {
+
         MAINDEBUG((LOG_ERR, "Unable to write %s.\n", script));
     }
-
-    _dos_close(handle);
+    fclose(output);
 }
 
 /*

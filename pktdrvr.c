@@ -8,6 +8,7 @@
 #include "asyimprt.h"
 #include "if_ppp.h"
 #include "pppd.h"
+#include "fmem.h" /* far memory functions */
 
 #define MAX_HANDLE      10      /* maximum number of handles */
 #define MAX_P_LEN       8       /* maximum type length */
@@ -352,7 +353,7 @@ static u_char f_release_type(INTERRUPT_REGS far *r)
         /* no, fail. But first release the DOS memory block if this
            release attempt comes from TERMIN.COM */
         if ( termin_handle && termin_handle == phandle )
-            _dos_freemem(_psp);
+            freemem(_psp);
 
         return retcode;
     }

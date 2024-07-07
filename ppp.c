@@ -66,6 +66,7 @@ extern struct asy Asy[ASY_MAX];
 #include "if_ether.h"
 #include "syslog.h"
 #include "pppd.h"
+#include "fmem.h" /* For the far memory functions */
 
 #define OPTIMIZE_FLAG_TIME  ((HZ * 3)/2)
 /*
@@ -327,7 +328,7 @@ void ppp_send_config(int unit, int mtu, u_int32_t asyncmap, int pcomp, int accom
  * ppp_recv_config - configure the receive-side characteristics of
  * the ppp interface.
  */
-
+#pragma argsused
 void ppp_recv_config(int unit, int mru, u_int32_t asyncmap, int pcomp, int accomp)
 {
     struct ppp *ppp;
@@ -988,7 +989,7 @@ static int ppp_rcv_rx(struct ppp *ppp, u_short proto, u_char *data, int count)
 /*
  * Process the receipt of an IP frame
  */
-
+#pragma argsused
 static int rcv_proto_ip(struct ppp *ppp, u_short proto, u_char *data, int count)
 {
     if ( ppp->flags & SC_ENABLE_IP ) {
@@ -1475,7 +1476,7 @@ static u_char *store_long(u_char *p, u_int32_t value)
 /*
  * Revise the tty frame for specific protocols.
  */
-
+#pragma argsused
 static int send_revise_frame(struct ppp *ppp, const u_char *data, int len)
 {
     u_char *p;

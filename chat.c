@@ -57,6 +57,9 @@
 #include <io.h>
 #endif
 
+#include "fmem.h" /* for the far mem functions */
+
+
 #define kbhit() (int)(unsigned char)bdos(0x0B, 0, 0)
 
 #define STR_LEN 1024

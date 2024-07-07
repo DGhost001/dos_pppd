@@ -6,6 +6,8 @@
 
 #include "pppd.h"
 
+#include <io.h>
+
 #ifdef DEBUGMAIN
 #include <stdlib.h>
 #include <string.h>
@@ -317,7 +319,7 @@ void close_DOS_handles(void)
 
         do {
             if ( *tableptr != 0xFF )
-                _dos_close(handle);
+                _close(handle);
 
             tableptr--;
             handle--;
@@ -343,7 +345,7 @@ unsigned free_DOS_environment(void)
     envseg = pspaddr->spEnvironment;
 
     if ( envseg ) {
-        errorcode = _dos_freemem(envseg);
+        errorcode = freemem(envseg);
 
         if ( errorcode == 0 )
             pspaddr->spEnvironment = 0;
@@ -697,7 +699,7 @@ int main(int argc, char *argv[])
             debug = 0;
             ppp_set_debug(ifunit, kdebugflag = 0);
             going_resident = 1;
-            _dos_keep(0, pkeep);
+            keep(0, pkeep);
         }
 #if 0
         /* some debug stuff and keyboard control */
@@ -1085,7 +1087,7 @@ void format_packet(u_char *p, int len, void (*printer)(void *, char *, ...), voi
     }
 }
 
-
+#pragma argsused
 void pr_log(void *arg, char *fmt, ...)
 {
     int n;
@@ -1174,8 +1176,8 @@ int syslog(int logid, const char *fmt, ...)
     }
 
     if ( ! disable_syslog )
-        _dos_write(( logid == LOG_ERR || logid == LOG_NOTICE) ? 2 : 1,
-                   (void far *)buf, len, &wlen);
+        wlen = write(( logid == LOG_ERR || logid == LOG_NOTICE) ? 2 : 1,
+                   (void far *)buf, len);
     else
         wlen = len;
 

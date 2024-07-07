@@ -28,6 +28,7 @@
 #include <dos.h>
 #include <errno.h>
 #include <ctype.h>
+#include <io.h>
 
 #include "pppd.h"
 #include "pathname.h"
@@ -389,7 +390,9 @@ int options_from_file(const char *filename, int musthave)
     char args[MAXARGS][MAXWORDLEN];
     char *argv[MAXARGS];
 
-    if ( _dos_open(filename, O_RDONLY, &fhandle) ) {
+    fhandle = open(filename, O_RDONLY);
+
+    if ( 0 > fhandle ) {
         if ( ! musthave && errno == ENOENT )
             return 1;
 
@@ -409,7 +412,7 @@ int options_from_file(const char *filename, int musthave)
         if ( cmdp->cmd_name != NULL ) {
             for ( i = 0 ; i < cmdp->num_args ; ++i ) {
                 if ( ! getword(fhandle, args[i], &newline, filename) ) {
-                    _dos_close(fhandle);
+                    close(fhandle);
                     syslog(LOG_ERR,
                            "In file %s: too few parameters for command %s.\n",
                            filename, cmd);
@@ -421,7 +424,7 @@ int options_from_file(const char *filename, int musthave)
             }
 
             if ( ! (*cmdp->cmd_func)(argv) ) {
-                _dos_close(fhandle);
+                close(fhandle);
                 usage();
 
                 return 0;
@@ -435,7 +438,7 @@ int options_from_file(const char *filename, int musthave)
             if ( (ret = setdevname(cmd)) == 0
                  && (ret = setspeed(cmd)) == 0
                  && (ret = setipaddr(cmd)) == 0 ) {
-                _dos_close(fhandle);
+                close(fhandle);
                 syslog(LOG_ERR, "In file %s: unrecognized command %s.\n",
                        filename, cmd);
                 usage();
@@ -444,14 +447,14 @@ int options_from_file(const char *filename, int musthave)
             }
 
             if ( ret < 0 ) {    /* error */
-                _dos_close(fhandle);
+                close(fhandle);
 
                 return 0;
             }
         }
     }
 
-    _dos_close(fhandle);
+    close(fhandle);
 
     return 1;
 }
@@ -863,7 +866,8 @@ static int setupapfile(char **argv)
     lcp_allowoptions[0].neg_upap = 1;
 
     /* open user info file */
-    if ( _dos_open(*argv, O_RDONLY, &ufile) ) {
+    ufile = open(*argv, O_RDONLY);
+    if ( 0 > ufile ) {
         syslog(LOG_ERR, "Unable to open user login data file %s.\n", *argv);
 
         return 0;
@@ -872,12 +876,12 @@ static int setupapfile(char **argv)
     if ( ! getword(ufile, user, &newline, *argv) ||
          ! getword(ufile, passwd, &newline, *argv) ) {
         syslog(LOG_ERR, "Error reading user login data file %s.\n", *argv);
-        _dos_close(ufile);
+        close(ufile);
 
         return 0;
     }
 
-    _dos_close(ufile);
+    close(ufile);
 
     return 1;
 }
