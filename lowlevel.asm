@@ -195,10 +195,10 @@ getindosflag    proc
 
         push    bp
         push    si              ; Guarda registros de posible
-        push    di              ;  utilizaci¢n por el C
+        push    di              ;  utilizaciï¿½n por el C
         push    ds
 
-        mov     ah, 34h         ; Llama a funci¢n DOS para obtener
+        mov     ah, 34h         ; Llama a funciï¿½n DOS para obtener
         int     21h             ;  el famoso puntero
 
         mov     ax, bx          ; Transfiere resultado a los registros
